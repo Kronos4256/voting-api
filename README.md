@@ -13,6 +13,8 @@ docker compose up --build
 
 La API queda en `http://localhost:8000` y la documentación Swagger en `http://localhost:8000/docs`. Las migraciones se aplican al arrancar el contenedor.
 
+Si el puerto 5432 ya está ocupado en tu máquina, agrega `POSTGRES_PORT=5433` al `.env`. Si además corres la API o los tests fuera de Docker, usa ese mismo puerto en `DATABASE_URL` y en `TEST_DATABASE_URL`.
+
 ## Ejecución local
 
 Requiere Python 3.12 y un PostgreSQL accesible (se puede levantar solo la base con `docker compose up -d --wait db`).
